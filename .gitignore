@@ -328,3 +328,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/Docker/05Oct2019/Source/SimpleWebApi/CustomImage
+/Docker/05Oct2019/Source/SimpleWebApiV1/CustomImage/Output

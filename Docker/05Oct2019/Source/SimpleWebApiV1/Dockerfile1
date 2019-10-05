@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/dotnet/core/aspnet:2.1-stretch-slim AS base
+EXPOSE 80
+
+
+FROM base AS final
+
+WORKDIR /app
+
+COPY ./CustomImage/Output .
+
+ENTRYPOINT ["dotnet", "SimpleWebApiV1.dll"]
