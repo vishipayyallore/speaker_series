@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{EABB9680-F3B9-4340-B38F-07BE64565329}"
+	ProjectSection(SolutionItems) = preProject
+		SQLScripts\1Create_Professors.sql = SQLScripts\1Create_Professors.sql
+		SQLScripts\2Create_Students.sql = SQLScripts\2Create_Students.sql
+		SQLScripts\3Insert_Professors.sql = SQLScripts\3Insert_Professors.sql
+		SQLScripts\4Insert_Students.sql = SQLScripts\4Insert_Students.sql
+		SQLScripts\Create_Database.sql = SQLScripts\Create_Database.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{2612BCCB-BCF6-4A16-BAA1-5DD1EA750ACD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Microservice", "Source\College.Microservice.csproj", "{9A444519-8E90-4AF6-BDCD-DAD05DE9B5B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A444519-8E90-4AF6-BDCD-DAD05DE9B5B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A444519-8E90-4AF6-BDCD-DAD05DE9B5B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A444519-8E90-4AF6-BDCD-DAD05DE9B5B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A444519-8E90-4AF6-BDCD-DAD05DE9B5B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9A444519-8E90-4AF6-BDCD-DAD05DE9B5B9} = {2612BCCB-BCF6-4A16-BAA1-5DD1EA750ACD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5770CD89-95FC-4F78-8B23-4DB5D8AE03D3}
+	EndGlobalSection
+EndGlobal
