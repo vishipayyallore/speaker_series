@@ -1,0 +1,30 @@
+
+Image Read Only Layers
+Container Think Writable Layer
+Special Directory associated with a Container
+A Volume can be shared with multiple containers
+Alias to Mount on your Docker Host machine
+
+docker run -p 8010:3000 -v var/www imageName [Docker Default Volume creation]
+docker inspect containerName
+
+docker run -p 8010:3000 -v c:\folderName:var/www imageName [Custom Volume creation]
+
+Node Application
+npm install express express-generator -g
+express HelloExpressApp --hbs
+
+cd HelloExpressApp && npm install
+nmp start
+
+----------------
+docker run -p x:y -v $(pwd):/var/www -w "/var/www" node npm start
+
+docker run -it -p x:y -v $(pwd):/app -w "/app" microsoft/aspnetcore-build /bin/bash
+InsideContainer#
+
+
+
+
+
+
