@@ -1,27 +1,32 @@
-
 Image Read Only Layers
-Container Think Writable Layer
+Container Thin Writable Layer
 Special Directory associated with a Container
 A Volume can be shared with multiple containers
 Alias to Mount on your Docker Host machine
 
-docker run -p 8010:3000 -v var/www imageName [Docker Default Volume creation]
-docker inspect containerName
-
-docker run -p 8010:3000 -v c:\folderName:var/www imageName [Custom Volume creation]
 
 Node Application
 npm install express express-generator -g
-express HelloExpressApp --hbs
+express HelloExpressAppV1 --hbs
 
-cd HelloExpressApp && npm install
+cd HelloExpressAppV1
+npm install
 nmp start
 
-----------------
-docker run -p x:y -v $(pwd):/var/www -w "/var/www" node npm start
+docker run -p 8010:3000 -v var/www imageName [Docker Default Volume creation]
+docker inspect containerName
 
-docker run -it -p x:y -v $(pwd):/app -w "/app" microsoft/aspnetcore-build /bin/bash
+docker run -p 8010:3000 -v %cd%:/var/www -w "/var/www" node npm start [Custom Volume creation]
+----------------
+
+
+docker run -it -p 8010:5000 -v %cd%:/app -w "/app" mcr.microsoft.com/dotnet/core/sdk:3.0-buster bash
 InsideContainer#
+
+http://localhost:8010/
+http://localhost:8020/
+
+http://localhost:8040/
 
 
 
