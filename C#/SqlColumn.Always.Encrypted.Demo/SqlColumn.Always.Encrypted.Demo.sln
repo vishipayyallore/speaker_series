@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlColumn.Always.Encrypted.Demo", "SqlColumn.Always.Encrypted.Demo\SqlColumn.Always.Encrypted.Demo.csproj", "{02B55386-4B34-4F00-B817-2E7682FCD17A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{FBEF0E1E-847F-4D67-85FD-497F3F00AD36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQLScripts", "SQLScripts", "{7687E087-2130-4D3C-90DA-FE9B64885048}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collage.Application", "Source\Collage.Application\Collage.Application.csproj", "{F48AD787-90B3-475D-87A9-C06E0B398DB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +15,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{02B55386-4B34-4F00-B817-2E7682FCD17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02B55386-4B34-4F00-B817-2E7682FCD17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02B55386-4B34-4F00-B817-2E7682FCD17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02B55386-4B34-4F00-B817-2E7682FCD17A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F48AD787-90B3-475D-87A9-C06E0B398DB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F48AD787-90B3-475D-87A9-C06E0B398DB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F48AD787-90B3-475D-87A9-C06E0B398DB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F48AD787-90B3-475D-87A9-C06E0B398DB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F48AD787-90B3-475D-87A9-C06E0B398DB4} = {FBEF0E1E-847F-4D67-85FD-497F3F00AD36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {276A643A-129A-4281-A1C8-CBD05FF3F762}
