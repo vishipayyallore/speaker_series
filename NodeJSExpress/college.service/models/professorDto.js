@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const { uuid } = require('uuidv4');
 
 const ProfessorSchema = mongoose.Schema({
-    professorId: { 
-        type: String, 
+    professorId: {
+        type: String,
         trim: true,
-        default: uuid 
+        default: uuid
     },
     date: {
         type: Date,

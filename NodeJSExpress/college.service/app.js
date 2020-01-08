@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 require('dotenv/config');
 
+// Middleware to add body parser
 app.use(bodyParser.json());
 
 // Import Routes
@@ -14,15 +15,16 @@ const studentsRoute = require('./routes/students');
 app.use('/professors', professorsRoute);
 app.use('/students', studentsRoute);
 
-// Routes
+// Default Route for the entire Web API
 app.get('/', (req, res) => {
     res.send('NodeJS express Web API connecting to MongoDb.');
 });
 
-// Connecting to the MongoDb Local Instance
-mongoose.connect(process.env.MongoDbConnection, { 
-    useNewUrlParser: true, useUnifiedTopology: true }, () => {
-    console.log('Connected to MongoDb');
+// Connecting to the MongoDb Instance
+mongoose.connect(process.env.MongoDbConnection, {
+    useNewUrlParser: true, useUnifiedTopology: true
+}, () => {
+    console.log('Connected to MongoDb Instance');
 });
 
 console.log(`Env Port: ${process.env.PORT}`);
