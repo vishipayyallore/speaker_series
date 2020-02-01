@@ -35,6 +35,7 @@ namespace College.Api.RPCServices
             getProfessorResponse.Name = professor.Name;
             getProfessorResponse.Teaches = professor.Teaches;
             getProfessorResponse.IsPhd = professor.IsPhd;
+            getProfessorResponse.Salary = decimal.ToDouble(professor.Salary);
 
             return getProfessorResponse;
         }
