@@ -33,6 +33,8 @@ namespace College.Api.RPCServices
 
             getProfessorResponse.ProfessorId = professor.ProfessorId.ToString();
             getProfessorResponse.Name = professor.Name;
+            getProfessorResponse.Teaches = professor.Teaches;
+            getProfessorResponse.IsPhd = professor.IsPhd;
 
             return getProfessorResponse;
         }
