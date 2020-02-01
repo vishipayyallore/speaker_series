@@ -15,7 +15,7 @@ namespace College.Api.Entities
 
         public string Teaches { get; set; }
 
-        public byte[] Salary { get; set; }
+        public decimal Salary { get; set; }
 
         public bool IsPhd { get; set; }
 

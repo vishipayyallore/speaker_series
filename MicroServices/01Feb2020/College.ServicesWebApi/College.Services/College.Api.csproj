@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Protos\" />
+    <Protobuf Include="Protos\CollegeApi.proto" GrpcServices="Server" />
   </ItemGroup>
-
+  
 </Project>
