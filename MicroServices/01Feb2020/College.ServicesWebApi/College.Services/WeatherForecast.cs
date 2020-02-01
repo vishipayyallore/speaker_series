@@ -1,6 +1,6 @@
 using System;
 
-namespace College.Services
+namespace College.Api
 {
     public class WeatherForecast
     {
