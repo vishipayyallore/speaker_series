@@ -6,7 +6,7 @@ namespace College.Api.HealthChecks
 {
     public class SimpleHealthCheck : IHealthCheck
     {
-        public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context, 
+        public Task<HealthCheckResult> CheckHealthAsync(HealthCheckContext context,
             CancellationToken cancellationToken = default)
         {
             var healthCheckResultHealthy = true;
