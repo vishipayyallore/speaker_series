@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+import { LoginService } from '../services/login.service';
 import { UserDto } from '../interfaces/UserDto';
 
 @Component({
@@ -11,11 +12,11 @@ import { UserDto } from '../interfaces/UserDto';
 export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private loginService: LoginService, private formBuilder: FormBuilder) {
     this.loginForm = this.formBuilder.group({
       userNickName: '',
-      isGraduated: '',
-      isProgrammer: ''
+      isGraduated: false,
+      isProgrammer: false
     });
   }
 
@@ -23,11 +24,14 @@ export class LoginPageComponent implements OnInit {
   }
 
   onSubmit(userData: UserDto): void {
-		// Process Checkout Data here
-		console.warn(`Your order has been submitted with Name: ${userData.userNickName} Graduated: ${userData.isGraduated} Programmer: ${userData.isProgrammer}`);
+    // Process Checkout Data here
+    console.warn(`Your order has been submitted with Name: ${userData.userNickName} Graduated: ${userData.isGraduated} Programmer: ${userData.isProgrammer}`);
 
-		// this.selectedProducts = this.cartService.clearSelectedProducts();
-		// this.checkoutForm.reset();
+    this.loginService.loginIntoApplication(userData).subscribe((result) => {
+      console.log('User Added');
+    }, (err) => {
+      console.log(err);
+    });
   }
-  
+
 }

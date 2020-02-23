@@ -23,6 +23,8 @@ namespace UserService
         {
             services.AddControllers();
 
+            services.AddCors(c => c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader()));
+
             // Adding EF Core
             var connectionString = Configuration[Constants.ConnectionString];
             services.AddDbContext<AppDbContext>(o => o.UseSqlServer(connectionString));
@@ -39,6 +41,8 @@ namespace UserService
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors("AllowOrigin");
 
             app.UseAuthorization();
 
