@@ -1,0 +1,57 @@
+<h2>Login</h2>
+<form bind-formGroup="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <div>
+        <label for="userNickName">Nick Name: </label>
+        <input id="userNickName" type="text" formControlName="userNickName" />
+    </div>
+    <div>
+        <label for="isGraduated">Graduated: </label>
+        <label class="radio-inline">
+            <input type="radio" name="isGraduated" value='true' formControlName="isGraduated">Yes
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="isGraduated" value='false' formControlName="isGraduated">No
+        </label>
+    </div>
+    <div>
+        <label for="isProgrammer">Programmer: </label>
+        <label class="radio-inline">
+            <input type="radio" name="isProgrammer" value='true'  formControlName="isProgrammer">Yes
+        </label>
+        <label class="radio-inline">
+            <input type="radio" name="isProgrammer" value='false'  formControlName="isProgrammer">No
+        </label>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" type="submit">
+            <span class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+        </button>
+    </div>
+</form>
+
+<!--
+
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Login
+        </button>
+        <a routerLink="/register" class="btn btn-link">Register</a>
+    </div>
+</form>
+-->
