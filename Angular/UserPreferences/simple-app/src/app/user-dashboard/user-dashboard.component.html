@@ -1,0 +1,14 @@
+<h1>Welcome {{currentUser.userNickName}}</h1>
+
+<table border="1" cell-spacing="1">
+    <tr>
+        <th>Nick Name</th>
+        <th>Graduated</th>
+        <th>Programmer</th>
+    </tr>
+    <tr *ngFor="let user of loggedInUsers">
+        <td>{{user.userNickName}}</td>
+        <td>{{user.isGraduated}}</td>
+        <td>{{user.isProgrammer}}</td>
+    </tr>
+</table>

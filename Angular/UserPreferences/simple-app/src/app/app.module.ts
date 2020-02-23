@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { TopBandComponent } from './top-band/top-band.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    TopBandComponent
+    TopBandComponent,
+    UserDashboardComponent
   ],
   imports: [
     BrowserModule,

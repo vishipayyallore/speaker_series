@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from "@angular/router";
 
 import { LoginService } from '../services/login.service';
 import { UserDto } from '../interfaces/UserDto';
@@ -12,7 +13,7 @@ import { UserDto } from '../interfaces/UserDto';
 export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private loginService: LoginService, private formBuilder: FormBuilder) {
+  constructor(private loginService: LoginService, private formBuilder: FormBuilder, private router: Router) {
     this.loginForm = this.formBuilder.group({
       userNickName: '',
       isGraduated: false,
@@ -29,6 +30,7 @@ export class LoginPageComponent implements OnInit {
 
     this.loginService.loginIntoApplication(userData).subscribe((result) => {
       console.log('User Added');
+      this.router.navigate(['/dashboard'])
     }, (err) => {
       console.log(err);
     });

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
@@ -18,17 +18,28 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class LoginService {
+  private currentUser: UserDto;
 
   constructor(private httpClient: HttpClient) {
   }
 
   loginIntoApplication(userData: UserDto): Observable<UserDto> {
+    this.currentUser = userData;
+
     console.log(`Received Request: ${userData.userNickName}`);
 
     return this.httpClient.post<UserDto>(endpoint + 'userpreferences', JSON.stringify(userData), httpOptions).pipe(
       tap((user) => console.log(`added User w/ id=${user.userNickName}`)),
       catchError(this.handleError<any>('addUser'))
     );
+  }
+
+  getAllLoggedInUsers(): Observable<HttpResponse<UserDto[]>> {
+		return this.httpClient.get<UserDto[]>(`${endpoint}userpreferences`, { observe: 'response' });
+  }
+  
+  getCurrentUser(): UserDto{
+    return this.currentUser;
   }
 
   private handleError<T> (operation = 'operation', result?: T) {
