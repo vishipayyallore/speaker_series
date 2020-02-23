@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using UserService.Entities;
+using UserService.Persistence;
 
 namespace UserService.Controllers
 {
@@ -7,18 +11,32 @@ namespace UserService.Controllers
     [ApiController]
     public class UserPreferencesController : ControllerBase
     {
+
+        private readonly AppDbContext _appDbContext;
+
+        public UserPreferencesController(AppDbContext appDbContext)
+        {
+            _appDbContext = appDbContext;
+        }
+
         // GET: api/UserPreferences
         [HttpGet]
-        public IEnumerable<string> Get()
+        public async Task<ActionResult<IEnumerable<UserPreference>>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var users = await _appDbContext.UserPreferences.ToListAsync();
+
+            return Ok(users);
         }
 
         // POST: api/UserPreferences
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult<UserPreference>> Post([FromBody] UserPreference userPreference)
         {
+            _appDbContext.UserPreferences.Add(userPreference);
+            await _appDbContext.SaveChangesAsync();
+
+            return Created(string.Empty, userPreference);
         }
-        
+
     }
 }
