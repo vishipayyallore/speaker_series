@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 using StackExchange.Redis;
 using System;
+using System.Linq;
 
 namespace SimpleRedisDemo
 {
@@ -37,6 +39,14 @@ namespace SimpleRedisDemo
 
             IDatabase cache = lazyConnection.Value.GetDatabase();
 
+            var redisKeys = Connection.GetServer(Configuration["ServerDetails"]).Keys(0, "*");
+            string[] keys = redisKeys.Select(key => (string)key).ToArray();
+
+            foreach(var key in keys)
+            {
+                Console.WriteLine($"Key: {key} :: Value: {cache.StringGet(key).ToString()}" );
+            }
+
             // Simple PING command
             string cacheCommand = "PING";
             Console.WriteLine("\nCache command  : " + cacheCommand);
@@ -46,6 +56,9 @@ namespace SimpleRedisDemo
             cacheCommand = "GET Shiva";
             Console.WriteLine("\nCache command  : " + cacheCommand + " or StringGet()");
             Console.WriteLine("Cache response : " + cache.StringGet("Shiva").ToString());
+
+            var person = new { Id = Guid.NewGuid(), Name = "Shiva Sai", Age = 25 };
+            cache.StringSet(person.Id.ToString(), JsonConvert.SerializeObject(person));
 
             Console.WriteLine("\n\nPress any key ...");
             Console.ReadKey();
