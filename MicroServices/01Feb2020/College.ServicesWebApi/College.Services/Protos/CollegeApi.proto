@@ -5,13 +5,21 @@ option csharp_namespace = "College.Api.Protos";
 package collegeapi;
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
 
 service CollegeService {
 	rpc GetProfessorById(GetProfessorRequest) returns (GetProfessorResponse);
+	rpc GetAllProfessors(google.protobuf.Empty) returns (AllProfessorsResonse);
 }
 
 message GetProfessorRequest {
 	string professorId = 1;
+}
+
+message AllProfessorsResonse {
+	repeated GetProfessorResponse professors = 1;
+	string message = 2;
+	int32 count = 3;
 }
 
 message GetProfessorResponse {

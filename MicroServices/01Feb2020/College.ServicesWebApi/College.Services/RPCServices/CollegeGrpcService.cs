@@ -1,5 +1,7 @@
-﻿using College.Api.Persistence;
+﻿using College.Api.Entities;
+using College.Api.Persistence;
 using College.Api.Protos;
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,6 +19,22 @@ namespace College.Api.RPCServices
             _collegeDbContext = collegeDbContext;
         }
 
+        public override async Task<AllProfessorsResonse> GetAllProfessors(Empty request, ServerCallContext context)
+        {
+            AllProfessorsResonse allProfessorsResonse = new AllProfessorsResonse();
+
+            var allProfessors = await _collegeDbContext.Professors.ToListAsync();
+
+            allProfessorsResonse.Count = allProfessors.Count;
+            
+            foreach(var professor in allProfessors)
+            {
+                allProfessorsResonse.Professors.Add(GetProfessorObject(professor));
+            }
+
+            return allProfessorsResonse;
+        }
+
         public override async Task<GetProfessorResponse> GetProfessorById(GetProfessorRequest request, ServerCallContext context)
         {
             GetProfessorResponse getProfessorResponse = new GetProfessorResponse();
@@ -31,13 +49,22 @@ namespace College.Api.RPCServices
                 .Include(student => student.Students)
                 .FirstOrDefaultAsync();
 
-            getProfessorResponse.ProfessorId = professor.ProfessorId.ToString();
-            getProfessorResponse.Name = professor.Name;
-            getProfessorResponse.Teaches = professor.Teaches;
-            getProfessorResponse.IsPhd = professor.IsPhd;
-            getProfessorResponse.Salary = decimal.ToDouble(professor.Salary);
+            getProfessorResponse =  GetProfessorObject(professor);
 
             return getProfessorResponse;
+        }
+
+        private static GetProfessorResponse GetProfessorObject(Professor professor)
+        {
+            return new GetProfessorResponse()
+            {
+                ProfessorId = professor.ProfessorId.ToString(),
+                Name = professor.Name,
+                Teaches = professor.Teaches,
+                IsPhd = professor.IsPhd,
+                Salary = decimal.ToDouble(professor.Salary),
+                Doj = Timestamp.FromDateTime(professor.Doj.ToUniversalTime())
+            };
         }
     }
 }
