@@ -4,8 +4,11 @@ option csharp_namespace = "College.Service.Protos";
 
 package addressbook;
 
+import "google/protobuf/timestamp.proto";
+
 service AddressBookService {
   rpc AddUserAddress (AddressAdditionRequest) returns (AddressAdditionResponse);
+  rpc AddPersonHealthData (HealthRequest) returns (HealthResponse);
 }
 
 message AddressAdditionRequest {
@@ -16,3 +19,16 @@ message AddressAdditionRequest {
 message AddressAdditionResponse {
   string message = 1;
 }
+
+message HealthRequest {
+  string id = 1;
+  string name = 2;
+  int32 healthParameter1 = 3;
+  int32 healthParameter2 = 4;
+  google.protobuf.Timestamp receivedAt = 5;
+}
+
+message HealthResponse {
+  string message = 1;
+}
+

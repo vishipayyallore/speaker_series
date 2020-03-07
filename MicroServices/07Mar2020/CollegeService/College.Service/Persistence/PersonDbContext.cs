@@ -12,5 +12,7 @@ namespace College.Service.Persistence
         }
 
         public DbSet<AddressData> AddressBook { get; set; }
+
+        public DbSet<HealthData> Health { get; set; }
     }
 }
