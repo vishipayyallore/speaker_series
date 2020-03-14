@@ -5,7 +5,6 @@ option csharp_namespace = "College.Service.Protos";
 package addressbook;
 
 import "google/protobuf/timestamp.proto";
-// import "../ForHoldingMessages/Protos/AddressBookMessages.proto";
 import "ForHoldingMessages/Protos/AddressBookMessages.proto";
 
 service AddressBookService {

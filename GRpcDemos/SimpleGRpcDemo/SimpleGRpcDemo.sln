@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.Service", "College.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForHoldingMessages", "ForHoldingMessages\ForHoldingMessages.csproj", "{E0EBD2AA-E57B-4F4F-87FA-11DFA8FDA1BA}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "College.ServiceClient", "College.ServiceClient\College.ServiceClient.csproj", "{41015537-1C09-4E43-A8AC-50DCE4F37800}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E0EBD2AA-E57B-4F4F-87FA-11DFA8FDA1BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0EBD2AA-E57B-4F4F-87FA-11DFA8FDA1BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0EBD2AA-E57B-4F4F-87FA-11DFA8FDA1BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41015537-1C09-4E43-A8AC-50DCE4F37800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41015537-1C09-4E43-A8AC-50DCE4F37800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41015537-1C09-4E43-A8AC-50DCE4F37800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41015537-1C09-4E43-A8AC-50DCE4F37800}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
