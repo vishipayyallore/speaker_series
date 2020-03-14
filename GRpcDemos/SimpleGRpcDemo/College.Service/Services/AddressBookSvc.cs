@@ -29,17 +29,17 @@ namespace College.Service.Services
         }
 
 
-        //public override async Task<AddressAdditionResponse> AddUserAddress(AddressAdditionRequest request, ServerCallContext context)
-        //{
-        //    var userAddress = new AddressData { Name = request.Name, Address = request.Address };
+        public override async Task<AddressAdditionResponse> AddUserAddress(AddressAdditionRequest request, ServerCallContext context)
+        {
+            var userAddress = new AddressData { Name = request.Name, Address = request.Address };
 
-        //    _personDbContext.Add(userAddress);
-        //    await _personDbContext.SaveChangesAsync();
+            _personDbContext.Add(userAddress);
+            await _personDbContext.SaveChangesAsync();
 
-        //    var results = new AddressAdditionResponse { Message = "Address Save Successfully." };
+            var results = new AddressAdditionResponse { Message = "Address Save Successfully." };
 
-        //    return results;
-        //}
+            return results;
+        }
 
     }
 

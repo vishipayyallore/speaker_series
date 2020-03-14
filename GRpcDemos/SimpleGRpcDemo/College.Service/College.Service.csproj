@@ -7,11 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="ForHoldingMessages/Protos/AddressBookMessages.proto" GrpcServices="None" ProtoRoot="..">
-      <Link>Protos/AddressBookMessages.proto</Link>
+    <Protobuf Include="..\ForHoldingMessages\Protos\AddressBookMessages.proto" GrpcServices="None">
+      <Link>Protos\AddressBookMessages.proto</Link>
     </Protobuf>
     <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
-    <Protobuf Include="Protos\AddressBook.proto" GrpcServices="Server" />
+    <Protobuf Include="..\College.Service\Protos\AddressBook.proto" GrpcServices="Server" ProtoRoot="..">
+    </Protobuf>
   </ItemGroup>
 
   <ItemGroup>

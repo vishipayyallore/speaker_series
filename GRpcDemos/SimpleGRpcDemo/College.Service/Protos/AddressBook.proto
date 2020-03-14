@@ -5,10 +5,11 @@ option csharp_namespace = "College.Service.Protos";
 package addressbook;
 
 import "google/protobuf/timestamp.proto";
-// import "Protos/AddressBookMessages.proto";
+// import "../ForHoldingMessages/Protos/AddressBookMessages.proto";
+import "ForHoldingMessages/Protos/AddressBookMessages.proto";
 
 service AddressBookService {
-  // rpc AddUserAddress (AddressAdditionRequest) returns (AddressAdditionResponse);
+  rpc AddUserAddress (AddressAdditionRequest) returns (AddressAdditionResponse);
   rpc AddPersonHealthData (HealthRequest) returns (HealthResponse);
 }
 

@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="D:\tools\TandF_BITS.xsl"?>
+<book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oasis="http://www.niso.org/standards/z39-96/ns/oasis-exchange/table" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xsi:noNamespaceSchemaLocation="http://jats.nlm.nih.gov/extensions/bits/2.0/xsd/BITS-book-oasis2.xsd">
+  <book-body>
+    <book-part book-part-type="chapter" id="chapter3">
+      <book-part-meta>
+        <title-group>
+          <label>3</label>
+          <title>
+            <target target-type="page" id="page_1">1</target>Software Design
+          </title>
+        </title-group>
+      </book-part-meta>
+      <body>
+        <list list-type="bullet">
+          <list-item>
+            <p>Software design</p>
+          </list-item>
+          <list-item>
+            <p>Abstraction</p>
+          </list-item>
+          <list-item>
+            <p>Modularity</p>
+          </list-item>
+          <list-item>
+            <p>Software Architecture</p>
+          </list-item>
+          <list-item>
+            <p>Effective modular design – Cohesion and Coupling</p>
+          </list-item>
+          <list-item>
+            <p>Architectural design and Procedural design</p>
+          </list-item>
+          <list-item>
+            <p>Data flow oriented design</p>
+          </list-item>
+        </list>
+        <sec id="sec1_1">
+          <title>Software Design</title>
+          <list llist-type="bullet">
+            <list-item>
+              <p>Software design encompasses the set of principles, concepts and practices that lead to the development of a high quality system or product.</p>
+            </list-item>
+            <list-item>
+              <p>Design creates a representation or model of the software, but unlike the requirements model, the design model provides details about software architecture, data structures, interfaces and components that are necessary to implement the system.</p>
+            </list-item>
+            <list-item>
+              <p>Software design is an iterative process through which requirements are translated into a  ‘ blue print ’ for constructing software.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="sec1_2">
+          <title>Design Principles</title>
+          <list list-type="order">
+            <list-item>
+              <p>Software design should correspond to the analysis model – Design element correspond to many requirements, the design model satisfies all the requirements represented by the analysis model.</p>
+            </list-item>
+            <list-item>
+              <p>Choose the right programming paradigm – A program paradigmdescribes the structure of the software system. The paradigm should be chosen keeping constraints in mind such as time, availability of resources and nature of user ” s requirements.</p>
+            </list-item>
+            <list-item>
+              <p>Software design should be flexible – Software design should be flexible enough to adapt changes easily. To achieve the flexibility, the basic design concepts such as abstraction and modularity should be applied effectively.</p>
+            </list-item>
+            <list-item>
+              <p>Software design should represent correspondence between the software and real – world problem – The software design should be structured in such a way that it always relates with the real-world problem.</p>
+            </list-item>
+            <list-item>
+              <p>Software reuse – The software components should be designed in such a way that they can be effectively reused to increase the productivity.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="sec1_3">
+          <title>Design Concepts</title>
+          <p>The design concepts help you to answer the following questions –</p>
+          <list list-type="order">
+            <list-item>
+              <p>What criteria can be used to partition software into individual components?</p>
+            </list-item>
+            <list-item>
+              <p>How is function or data structure detail separated from a conceptual representation of the software?</p>
+            </list-item>
+            <list-item>
+              <p>What uniform criteria define the technical quality of a software design?</p>
+            </list-item>
+          </list>
+          <p>Software design concepts that span both traditional and object-oriented software development are as follows – </p>
+        </sec>
+        <sec id="sec1_3_1">
+          <title>Abstraction</title>
+          <list list-type="bullet">
+            <list-item>
+              <p>When you consider a modular solution to any problem, many levels of abstraction can be presented.</p>
+            </list-item>
+            <list-item>
+              <p>At the highest level of abstraction, a solution is stated in broad terms and at lower levels of abstraction, a more detailed description of the solution is provided.</p>
+            </list-item>
+            <list-item>
+              <p>As different levels of abstraction are developed, we have to create both procedural and data abstractions.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="sec1_3_2">
+          <title>Procedural Abstraction</title>
+          <list list-type="bullet">
+            <list-item>
+              <p>A Procedural Abstraction refers to a sequence of instructions that have a specific and limited function.</p>
+            </list-item>
+            <list-item>
+              <p>The name of a procedural abstraction implies these functions, butspecific details are suppressed. Example – ‘ Open for a door ’ – here open implies a long sequence of procedural steps.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="sec1_3_3">
+          <title>Data Abstraction</title>
+          <list list-type="bullet">
+            <list-item>
+              <p>A Data Abstraction is a named collection of data that describes adata object.</p>
+            </list-item>
+            <list-item>
+              <p>In the context of procedural abstraction open, we can define a data abstraction called door.</p>
+            </list-item>
+            <list-item>
+              <p>The data abstraction for door would encompass a set of attributesthat describes the door. Example – door type, swing direction, opening mechanism etc.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="sec1_4">
+          <title>Architecture</title>
+          <list list-type="bullet">
+            <list-item>
+              <p>Architecture is the structure or organization of program components (modules), the manner in which these components interact, and the structureof data that are used by the components.</p>
+            </list-item>
+            <list-item>
+              <p>A set of architectural patterns enables a software engineer to solve common design problems.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="sec1_5">
+          <title>Patterns</title>
+          <list list-type="bullet">
+            <list-item>
+              <p>A design pattern describes a design structure that solves a particular design problem within a specific context.</p>
+            </list-item>
+            <list-item>
+              <p>The design patterns are used to determine</p>
+            </list-item>
+            <list list-type="alpha-lower">
+              <list-item>
+                <p>Whether the pattern is applicable to the current work</p>
+              </list-item>.
+              <list-item>
+                <p>Whether the pattern can be reused</p>
+              </list-item>
+              <list-item>
+                <p>Whether the pattern can be serve as a guide for developing a similar but functionally or structurally different pattern.</p>
+              </list-item>
+            </list>
+          </list>
+        </sec>
+        <sec id="sec1_6">
+          <title>Separation of Concerns</title>
+          <list list-type="bullet">
+            <list-item>
+              <p>Separation of concerns is a design concept that suggests that anycomplex problem can be more easily handled if it is subdivided into pieces thatcan each be solved independently.</p>
+            </list-item>
+            <list-item>
+              <p>A concern is a feature or behavior that is specified as part of the requirements model for the software.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="sec1_7">
+          <title>Modularity</title>
+          <list list-type="bullet">
+            <list-item>
+              <p>Modularity is the most common manifestation of separation of concerns.</p>
+            </list-item>
+            <list-item>
+              <p>Modularity is the single attribute of software that allows a program to be intellectually manageable.</p>
+            </list-item>
+            <list-item>
+              <p>Almost all instances, you should break the design into many modules, to make understanding easier and reduce the cost required to build the software.</p>
+            </list-item>
+            <list-item>
+              <p>The cost to develop an individual software module does decrease as the total number of modules increases.</p>
+            </list-item>
+            <list-item>
+              <p>However, as the number of modules increases, the cost associated with integrating the modules also increases.</p>
+            </list-item>
+            <list-item>
+              <p>There is a number M of modules that would result in minimum development cost, but we do not have the necessary sophistication to predict M with assurance.</p>
+            </list-item>
+            <list-item>
+              <p>You should modularize, but care should be taken to stay in vicinity of M.</p>
+            </list-item>
+          </list>
+          <fig>
+            <caption>
+              <title>Modularity</title>
+            </caption>
+            <graphic xlink:href="Modularity.tif"/>
+          </fig>
+        </sec>
+        <sec id="sec2">
+          <title>Effective Modular Design</title>
+          <list list-type="bullet">
+            <list-item>
+              <p>When a software program is modularized, its tasks are divided into several modules based on some characteristics.</p>
+            </list-item>
+            <list-item>
+              <p>Modules are set of instructions put together in order to achieve some tasks.</p>
+            </list-item>
+            <list-item>
+              <p>There are measures by which the quality of a design of modules and their interaction among them can be measured.</p>
+            </list-item>
+            <list-item>
+              <p>These measures are called coupling and cohesion.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="sec2_1">
+          <title>Cohesion</title>
+          <p>Cohesion is a measure that defines the degree of intra – dependability within elements of a module. The greater the cohesion, the better is the program design.</p>
+          <p>There are seven types of cohesion, namely – </p>
+          <list list-type="bullet">
+            <list-item>
+              <p>Co – incidental cohesion – It is unplanned and random cohesion, which might be the result of breaking the program into smaller modules for the sake of modularization. Because it is unplanned, it may serve confusion to the programmers and is generally not-accepted.</p>
+            </list-item>
+            <list-item>
+              <p>Logical cohesion – When logically categorized elements areput together into a module, it is called logical cohesion.</p>
+            </list-item>
+            <list-item>
+              <p>Temporal Cohesion – When elements of module are organized such that they are processed at a similar point in time, it is called temporal cohesion.</p>
+            </list-item>
+            <list-item>
+              <p>Procedural cohesion – When elements of module are grouped together, which are executed sequentially in order to perform a task, it is called procedural cohesion.</p>
+            </list-item>
+            <list-item>
+              <p>Communicational cohesion – When elements of module are grouped together, which are executed sequentially and work on same data (information), it is called communicational cohesion.</p>
+            </list-item>
+            <list-item>
+              <p>Sequential cohesion – When elements of module are grouped because the output of one element serves as input to another and so on, it is called sequential cohesion.</p>
+            </list-item>
+            <list-item>
+              <p>Functional cohesion – It is considered to be the highest degree of cohesion, and it is highly expected. Elements of module in functional cohesion are grouped because they all contribute to a single well-defined function. It can also be reused.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="sec2_2">
+          <title>Coupling</title>
+          <p>Coupling is a measure that defines the level of inter – dependability among modules of a program. It tells at what level the modules interfere and interact with each other. The lower the coupling, the better the program.</p>
+          <p>There are five types of coupling, namely – </p>
+          <list list-type="bullet">
+            <list-item>
+              <p>Content coupling – When a module can directly access or modify or refer to the content of another module, it is called content level coupling.</p>
+            </list-item>
+            <fig>
+              <caption>
+                <title>Content Coupling</title>
+              </caption>
+              <graphic xlink:href="Content Coupling.tif"/>
+            </fig>
+            <list-item>
+              <p>Common coupling – When multiple modules have read and write access to some global data, it is called common or global coupling.</p>
+            </list-item>
+            <fig>
+              <caption>
+                <title>Common Coupling</title>
+              </caption>
+              <graphic xlink:href="Common Coupling.tif"/>
+            </fig>
+            <list-item>
+              <p>Control coupling – Two modules are called control –coupled if one of them decides the function of the other module or changes itsflow of execution.</p>
+            </list-item>
+            <list-item>
+              <p>Stamp coupling – When multiple modules share common data structure and work on different part of it, it is called stamp coupling.</p>
+            </list-item>
+            <fig>
+              <caption>
+                <title>Stamp Coupling</title>
+              </caption>
+              <graphic xlink:href="Stamp Coupling.tif"/>
+            </fig>
+            <list-item>
+              <p>Data coupling – Data coupling is when two modules interactwith each other by means of passing data (as parameter). If a module passes data structure as parameter, then the receiving module should use all its components.</p>
+            </list-item>
+            <p>Ideally, no coupling is considered to be the best.</p>
+          </list>
+        </sec>
+        <sec id="sec2_3">
+          <title>Architectural Design</title>
+          <p>Architectural design represents the structure of data and program componentsthat are required to build a computer – based system.</p>
+          <p>Architectural design begins with data design and then proceeds to the derivation of one or more representations of the architectural structure of the system.</p>
+          <p>The architectural design can be represented using one or more of an number of different models – </p>
+          <list list-type="order">
+            <list-item>
+              <p>Structural Models – represent architecture as an organizedcollection of program components.</p>
+            </list-item>
+            <list-item>
+              <p>Framework Models – identify repeatable architectural design frameworks that are encountered in similar types of applications.</p>
+            </list-item>
+            <list-item>
+              <p>Dynamic Models – address the behavioral aspects of the program architecture.</p>
+            </list-item>
+            <list-item>
+              <p>Process Models – focus on the design of the business or technical process.</p>
+            </list-item>
+            <list-item>
+              <p>Functional Models – represents the functional hierarchy ofa system.</p>
+            </list-item>
+            <p>A number of Architectural Description Languages (ADLs) have been developed to represent these models.</p>
+            <p>Software Architecture represents a structure in which some collection of components is connected by a set of defined relationships.</p>
+          </list>
+        </sec>
+        <sec id="sec2_3_1">
+          <title>Data – Centered Architecture – </title>
+          <list list-type="bullet">
+            <list-item>
+              <p>A data store resides at the center of this architecture and is accessed frequently by other components that update, add, delete and modify data within the data store.</p>
+            </list-item>
+            <list-item>
+              <p>Data – centered architecture promotes integrability, that is existing components can be changed and new components added to the architecture without concern about other clients.</p>
+            </list-item>
+            <list-item>
+              <p>Client components independently execute processes.</p>
+            </list-item>
+            <fig>
+              <caption>
+                <title>Data – Centered Architecture</title>
+              </caption>
+              <graphic xlink:href="Data – Centered Architecture.tif"/>
+            </fig>
+          </list>
+        </sec>
+        <sec id="sec2_3_2">
+          <title>Data – Flow Architecture – </title>
+          <list list-type="bullet">
+            <list-item>
+              <p>Data – flow architecture is applied when input data are to be transformed through a series of computational components into output data.</p>
+            </list-item>
+            <list-item>
+              <p>A pipe and filter pattern has a set of components called filters, connected by pipes that transmit data from one component to the next.</p>
+            </list-item>
+            <list-item>
+              <p>Each filter works independently on these components and the filter doesn ” t require knowledge of the working of its neighboring filters.</p>
+            </list-item>
+            <fig>
+              <caption>
+                <title>Data – Flow Architecture</title>
+              </caption>
+              <graphic xlink:href="Data – Flow Architecture.tif"/>
+            </fig>
+          </list>
+        </sec>
+        <sec id="sec2_3_3">
+          <title>Layered Architecture – </title>
+          <list list-type="bullet">
+            <list-item>
+              <p>A number of different layers are defined, each accomplishing operations that progressively becomes closer to the machine instruction set.</p>
+            </list-item>
+            <list-item>
+              <p>At the outer layer, components serve user interface operations.</p>
+            </list-item>
+            <list-item>
+              <p>At the inner layer, components perform operating system interfacing.</p>
+            </list-item>
+            <list-item>
+              <p>Intermediate layers provide utility services and application software functions.</p>
+            </list-item>
+            <fig>
+              <caption>
+                <title>Layered Architecture</title>
+              </caption>
+              <graphic xlink:href="Layered Architecture.tif"/>
+            </fig>
+            <list-item>
+              <p>The software to be developed must be put into context, that is the design should define external entities like other systems, devices, people that the software interact with and the nature of interaction.</p>
+            </list-item>
+            <list-item>
+              <p>Once the context is modeled and all external software interfaces have been described, you can identify a set of architectural archetypes.</p>
+            </list-item>
+            <list-item>
+              <p>An archetype is an abstraction that represents one element of the system behavior.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="thewasmissing">
+          <title>Representing the System in Context – </title>
+          <list list-type="alpha-lower">
+            <list-item>
+              <p>A software architect uses Architectural Context Diagram (ACD) to model the manner in which software interacts with entities external to its boundaries.</p>
+            </list-item>
+            <list-item>
+              <p>The generic structure of the architectural context diagram contains</p>
+            </list-item>
+          </list>
+          <list list-type="bullet">
+            <list-item>
+              <p>Super – ordinate System – Those systems that uses the target system as part of some higher level processing scheme.</p>
+            </list-item>
+            <list-item>
+              <p>Sub – ordinate System – Those systems that are used by the target system and provide data or processing that are necessary to complete target system functionality.</p>
+            </list-item>
+            <list-item>
+              <p>Peer – level System – Those systems that interact on a peer to peer basis to produce or consume information from target system.</p>
+            </list-item>
+            <list-item>
+              <p>Actor – Entities like people, deices that interact with the target system to produce or consume information that is necessary for processing.</p>
+            </list-item>
+          </list>
+          <fig>
+            <caption>
+              <title>Representing the system in context</title>
+            </caption>
+            <graphic xlink:href="Representing the system in context.tif"/>
+          </fig>
+          <list list-type="alpha-lower">
+            <list-item>
+              <p>The overall safeHome product controller and the internet based system both are super-ordinate to the security function.</p>
+            </list-item>
+            <list-item>
+              <p>The surveillance function is a peer system and uses security function.</p>
+            </list-item>
+            <list-item>
+              <p>The home – owner and control panel are actors that are both consumers and producers of information used or produced by the security function.</p>
+            </list-item>
+            <list-item>
+              <p>Sensors are used by the security function.</p>
+            </list-item>
+          </list>
+        </sec>
+        <sec id="thewasmissing_1">
+          <title>Defining Archetypes – </title>
+          <list list-type="alpha-lower">
+            <list-item>
+              <p>An archetype is a class or pattern that represents a core abstraction that is critical to the design of an architecture for the target system.</p>
+            </list-item>
+            <list-item>
+              <p>The target system architecture is composed of these archetypes, which represents stable elements of the architecture.</p>
+            </list-item>
+            <list-item>
+              <p>Archetypes can be derived by examining the analysis classes defined as part of the requirements model.</p>
+            </list-item>
+          </list>
+          <p>Node – Represents a cohesive collection of input and output elements.</p>
+          <p>Detector – An abstraction that encompasses all sensing equipment thatfeeds information into the target system.</p>
+          <p>Indicator – An abstraction that represents all mechanisms.</p>
+          <p>Controller – An abstraction that depicts the mechanisms that allows arming or disarming of a node. If controllers reside on a network they have the ability to communicate with one another.</p>
+          <fig>
+            <caption>
+              <title>Defining Archetypes</title>
+            </caption>
+            <graphic xlink:href="Defining Archetypes.tif"/>
+          </fig>
+        </sec>
+        <sec id="thewasmissing_2">
+          <title>Refining the Architecture into components – </title>
+          <list list-type="alpha-lower">
+            <list-item>
+              <p>The software architecture is refined into components, the structure of the system begins to merge.</p>
+            </list-item>
+            <list-item>
+              <p>The interfaces depicted in the architecture context diagram implyone or more specialized components that process the data that flows across the interface.</p>
+            </list-item>
+            <list-item>
+              <p>The safehome home security function might define the set of top-level components that address the following functionalities.</p>
+            </list-item>
+          </list>
+          <list list-type="bullet">
+            <list-item>
+              <p>External communication management – coordinates communication of the security function with external entities</p>
+            </list-item>
+            <list-item>
+              <p>Control Panel processing – manages all control panel functionality</p>
+            </list-item>
+            <list-item>
+              <p>Detector management – coordinates access to all detectors attached to the system.</p>
+            </list-item>
+            <list-item>
+              <p>Alarm processing – verifies and acts on all alarm conditions.</p>
+            </list-item>
+          </list>
+          <fig>
+            <caption>
+              <title>Refining the Architecture into Components –</title>
+            </caption>
+            <graphic xlink:href="Refining the Architecture into Components.tif"/>
+          </fig>
+        </sec>
+      </body>
+    </book-part>
+  </book-body>
+</book>

@@ -3,6 +3,7 @@ syntax = "proto3";
 // option csharp_namespace = "ForHoldingMessages.Protos";
 option csharp_namespace = "College.Service.Protos";
 
+package addressbook;
 
 message AddressAdditionRequest {
   string name = 1;
