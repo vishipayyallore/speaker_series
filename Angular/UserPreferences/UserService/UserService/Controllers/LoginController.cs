@@ -31,6 +31,7 @@ namespace UserService.Controllers
         }
 
         private List<Register> appUsers = new List<Register>();
+
         [AllowAnonymous]
         [HttpPost]
         [Route("login")]

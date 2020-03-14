@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+// option csharp_namespace = "ForHoldingMessages.Protos";
+option csharp_namespace = "College.Service.Protos";
+
+
+message AddressAdditionRequest {
+  string name = 1;
+  string address = 2;
+}
+
+message AddressAdditionResponse {
+  string message = 1;
+}
