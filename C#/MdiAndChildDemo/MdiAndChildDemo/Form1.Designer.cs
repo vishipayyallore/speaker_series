@@ -69,6 +69,7 @@
             this.form3ToolStripMenuItem.Name = "form3ToolStripMenuItem";
             this.form3ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.form3ToolStripMenuItem.Text = "Form 3";
+            this.form3ToolStripMenuItem.Click += new System.EventHandler(this.form3ToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
