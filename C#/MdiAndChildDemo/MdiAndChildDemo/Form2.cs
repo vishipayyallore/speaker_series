@@ -15,8 +15,10 @@ namespace MdiAndChildDemo
 
         private void button1_Click(object sender, EventArgs e)
         {
-            form3 = new Form3();
-            form3.MdiParent = this.MdiParent;
+            form3 = new Form3
+            {
+                MdiParent = this.MdiParent
+            };
             form3.Show();
 
             this.Close();

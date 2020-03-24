@@ -21,15 +21,19 @@ namespace MdiAndChildDemo
 
         private void form2ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            form2 = new Form2();
-            form2.MdiParent = this;
+            form2 = new Form2
+            {
+                MdiParent = this
+            };
             form2.Show();
         }
 
         private void form3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            form3 = new Form3();
-            form3.MdiParent = this;
+            form3 = new Form3
+            {
+                MdiParent = this
+            };
             form3.Show();
         }
     }
