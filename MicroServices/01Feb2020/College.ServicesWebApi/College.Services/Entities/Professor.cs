@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace College.Api.Entities
 {
@@ -11,6 +12,7 @@ namespace College.Api.Entities
 
         public string Name { get; set; }
 
+        [JsonConverter(typeof(JsonDateConverter))]
         public DateTime Doj { get; set; }
 
         public string Teaches { get; set; }
