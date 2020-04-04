@@ -9,7 +9,7 @@ namespace College.ServiceClient
     {
         static async Task Main(string[] args)
         {
-            using var channel = GrpcChannel.ForAddress("https://localhost:32768");
+            using var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new AddressBookService.AddressBookServiceClient(channel);
 
             var userAddress = new AddressAdditionRequest { Name = "22 Feb 2020", Address = "Webinar" };
