@@ -8,7 +8,7 @@ http://localhost:3010/api/health
 
 ## Login into the Docker Hub
 
-docker login --username vishipayyallore
+docker login --username userName
 
 ## Login into Azure
 

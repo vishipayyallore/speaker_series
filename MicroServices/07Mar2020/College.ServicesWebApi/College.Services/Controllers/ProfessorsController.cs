@@ -20,6 +20,7 @@ namespace College.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Professor>> Get()
         {
+            
             var professors = _professorsBusiness.GetProfessors();
 
             return Ok(professors);
