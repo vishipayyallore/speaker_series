@@ -6,6 +6,7 @@ using College.Api.BAL;
 using College.Api.Common;
 using College.Api.HealthChecks;
 using College.Api.Persistence;
+using College.Services.RPCServices;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +35,8 @@ namespace College.Services
             _ = services.AddHealthChecks()
                 .AddCheck<SimpleHealthCheck>("A Simple Web API Health Check");
 
+            services.AddGrpc();
+
             // Adding EF Core
             var connectionString = Configuration[Constants.ConnectionString];
             services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
@@ -58,6 +61,8 @@ namespace College.Services
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapGrpcService<CollegeGrpcService>();
+
                 endpoints.MapControllers();
 
                 endpoints.MapHealthChecks("/api/health");
