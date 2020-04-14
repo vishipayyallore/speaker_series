@@ -1,6 +1,6 @@
 using System;
 
-namespace College.Microservice
+namespace College.Microservice.Entities
 {
     public class WeatherForecast
     {

@@ -1,14 +1,13 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using College.Microservice.BAL;
+using College.Microservice.Common;
+using College.Microservice.Persistence;
+using College.Services.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace College.Microservice
 {
@@ -25,6 +24,14 @@ namespace College.Microservice
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Adding EF Core
+            var connectionString = Configuration[Constants.ConnectionString];
+            services.AddDbContext<CollegeDbContext>(o => o.UseSqlServer(connectionString));
+
+            // Application Services
+            services.AddScoped<ProfessorsBal>();
+            services.AddScoped<ProfessorsDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
