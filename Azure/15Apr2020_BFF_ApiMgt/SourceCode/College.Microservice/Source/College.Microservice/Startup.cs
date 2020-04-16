@@ -13,6 +13,10 @@ namespace College.Microservice
 {
     public class Startup
     {
+        const string AllowSpecificOrigins = "onlyFromMyPC";
+        const string LocalApplicationAddress = "https://localhost:44392";
+        const string ApimApplicationAddress = "https://weather-forecast-apimgw.azure-api.net";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,6 +27,15 @@ namespace College.Microservice
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: AllowSpecificOrigins, builder => {
+                                      builder.WithOrigins(LocalApplicationAddress, ApimApplicationAddress);
+                                  });
+            });
+
+            // Controllers
             services.AddControllers();
 
             // Adding EF Core
@@ -43,6 +56,8 @@ namespace College.Microservice
             }
 
             app.UseRouting();
+
+            app.UseCors(AllowSpecificOrigins);
 
             app.UseAuthorization();
 
