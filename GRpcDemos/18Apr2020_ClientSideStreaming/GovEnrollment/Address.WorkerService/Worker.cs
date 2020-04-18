@@ -44,32 +44,20 @@ namespace Address.WorkerService
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var address = _config["RPCService:BranchName"];
-            
+
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
-                var userAddress = new AddressAdditionRequest { 
-                                            Name = GenerateName(GetRandomValue()), 
-                                            Address = address,
-                                            Enrollment = _config["RPCService:EnrollmentType"]
-                                            };
-
-                var results = await Client.AddUserAddressAsync(userAddress);
-                Console.WriteLine($"Person Health Data: {results.Message}");
-
-                // Client Streaming
-                var stream = Client.AddAddressEnrollments();
-                await stream.RequestStream.WriteAsync(userAddress);
-
-                userAddress = new AddressAdditionRequest
+                var userAddress = new AddressAdditionRequest
                 {
                     Name = GenerateName(GetRandomValue()),
                     Address = address,
-                    Enrollment = "For Bank"
+                    Enrollment = _config["RPCService:EnrollmentType"]
                 };
-                await stream.RequestStream.WriteAsync(userAddress);
-                await stream.RequestStream.CompleteAsync();
+
+                var results = await Client.AddUserAddressAsync(userAddress);
+                Console.WriteLine($"Address Data: {results.Message}");
 
                 await Task.Delay(_config.GetValue<int>("RPCService:DelayInterval"), stoppingToken);
             }
@@ -78,7 +66,7 @@ namespace Address.WorkerService
         private string GenerateName(int len)
         {
             StringBuilder name = new StringBuilder(50);
-            
+
             string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "l", "n", "p", "q", "r", "s", "sh", "zh", "t", "v", "w", "x" };
             string[] vowels = { "a", "e", "i", "o", "u", "ae", "y" };
 
