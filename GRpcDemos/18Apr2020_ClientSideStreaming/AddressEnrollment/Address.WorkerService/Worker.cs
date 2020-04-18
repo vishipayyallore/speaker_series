@@ -44,12 +44,16 @@ namespace Address.WorkerService
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var address = _config["RPCService:BranchName"];
-
+            
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
-                var userAddress = new AddressAdditionRequest { Name = GenerateName(GetRandomValue()), Address = address };
+                var userAddress = new AddressAdditionRequest { 
+                                            Name = GenerateName(GetRandomValue()), 
+                                            Address = address,
+                                            Enrollment = _config["RPCService:EnrollmentType"]
+                                            };
 
                 var results = await Client.AddUserAddressAsync(userAddress);
                 Console.WriteLine($"Person Health Data: {results.Message}");

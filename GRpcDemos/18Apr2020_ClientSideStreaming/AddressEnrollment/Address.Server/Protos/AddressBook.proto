@@ -10,9 +10,14 @@ service AddressBookServer {
   rpc AddUserAddress (AddressAdditionRequest) returns (AddressAdditionResponse);
 }
 
+message AddressEnrollment {
+    repeated AddressAdditionRequest enrollments = 1;
+}
+
 message AddressAdditionRequest {
   string name = 1;
   string address = 2;
+  string enrollment = 3;
 }
 
 message AddressAdditionResponse {

@@ -11,6 +11,8 @@ namespace Address.Server.Entities
         public string Name { get; set; }
 
         public string Address { get; set; }
+
+        public string Enrollment { get; set; }
     }
 
 }

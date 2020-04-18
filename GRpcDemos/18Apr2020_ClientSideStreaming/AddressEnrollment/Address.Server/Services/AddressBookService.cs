@@ -21,7 +21,7 @@ namespace Address.Server.Services
 
         public override async Task<AddressAdditionResponse> AddUserAddress(AddressAdditionRequest request, ServerCallContext context)
         {
-            var userAddress = new AddressData { Name = request.Name, Address = request.Address };
+            var userAddress = new AddressData { Name = request.Name, Address = request.Address, Enrollment = request.Enrollment };
 
             _personDbContext.Add(userAddress);
             await _personDbContext.SaveChangesAsync();
