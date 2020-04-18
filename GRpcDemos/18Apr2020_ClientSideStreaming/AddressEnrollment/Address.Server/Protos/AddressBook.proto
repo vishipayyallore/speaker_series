@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "Address.Server.Protos";
+
+package addressserver;
+
+import "google/protobuf/timestamp.proto";
+
+service AddressBookServer {
+  rpc AddUserAddress (AddressAdditionRequest) returns (AddressAdditionResponse);
+}
+
+message AddressAdditionRequest {
+  string name = 1;
+  string address = 2;
+}
+
+message AddressAdditionResponse {
+  string message = 1;
+}

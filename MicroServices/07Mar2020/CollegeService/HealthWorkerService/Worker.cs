@@ -45,9 +45,9 @@ namespace HealthWorkerService
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
-                var customerName = _config["RPCService:CustomerName"];
+                
 
-                var healthData = new HealthRequest { Name = customerName, HealthParameter1 = GetRandomValue(), HealthParameter2 = GetRandomValue() };
+                var userAddress = new AddressAdditionRequest { Name = "22 Feb 2020", Address = _config["RPCService:CustomerName"] };
 
                 var results = await Client.AddPersonHealthDataAsync(healthData);
                 Console.WriteLine($"Person Health Data: {results.Message}");

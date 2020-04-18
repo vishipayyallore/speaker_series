@@ -6,7 +6,7 @@ using System.IO;
 using System.Threading.Tasks;
 using static Address.Server.Greeter;
 
-namespace Address.Client
+namespace Address.ConsoleApp
 {
     class Program
     {
@@ -41,4 +41,5 @@ namespace Address.Client
         }
 
     }
+
 }
