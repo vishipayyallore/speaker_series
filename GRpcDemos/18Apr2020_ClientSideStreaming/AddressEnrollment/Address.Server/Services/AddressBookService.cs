@@ -34,35 +34,23 @@ namespace Address.Server.Services
 
         public override async Task<Empty> AddAddressEnrollments(IAsyncStreamReader<AddressAdditionRequest> requestStream, ServerCallContext context)
         {
-            await foreach (var address in requestStream.ReadAllAsync())
-            {
-                Console.WriteLine($"{address.Name} | {address.Address} | {address.Enrollment}");
-                var userAddress = new AddressData
-                {
-                    Name = address.Name,
-                    Address = address.Address,
-                    Enrollment = address.Enrollment
-                };
-
-                await _personDbContext.SaveChangesAsync();
-            }
-
-            /*
             var theTask = Task.Run(async () =>
             {
                 await foreach (var address in requestStream.ReadAllAsync())
                 {
                     Console.WriteLine($"{address.Name} | {address.Address} | {address.Enrollment}");
-                    var userAddress = new AddressData { Name = address.Name, 
-                                                        Address = address.Address, 
-                                                        Enrollment = address.Enrollment };
 
+                    var userAddress = new AddressData {
+                        Name = address.Name, Address = address.Address, Enrollment = address.Enrollment
+                    };
+
+                    _personDbContext.Add(userAddress);
                     await _personDbContext.SaveChangesAsync();
                 }
             });
-            */
-            // await theTask;
-
+            
+            await theTask.ConfigureAwait(false);
+            
             return new Empty();
         }
 
