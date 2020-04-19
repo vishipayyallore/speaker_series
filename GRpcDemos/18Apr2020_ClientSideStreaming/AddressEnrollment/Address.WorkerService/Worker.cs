@@ -1,14 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Address.Server.Protos;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using static Address.Server.Protos.AddressBookServer;
 
 namespace Address.WorkerService

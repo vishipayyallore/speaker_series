@@ -4,13 +4,11 @@ using Address.Server.Protos;
 using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Address.Server.Services
 {
-    
+
     public class AddressBookService : AddressBookServer.AddressBookServerBase
     {
         private readonly PersonDbContext _personDbContext;

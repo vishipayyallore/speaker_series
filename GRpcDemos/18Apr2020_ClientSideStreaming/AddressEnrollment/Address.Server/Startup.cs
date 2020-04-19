@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Address.Server.Common;
+﻿using Address.Server.Common;
 using Address.Server.Persistence;
 using Address.Server.Services;
 using Microsoft.AspNetCore.Builder;
