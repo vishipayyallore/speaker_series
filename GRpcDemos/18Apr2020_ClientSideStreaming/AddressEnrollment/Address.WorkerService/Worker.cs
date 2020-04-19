@@ -55,28 +55,9 @@ namespace Address.WorkerService
                                             Enrollment = _config["RPCService:EnrollmentType"]
                                             };
 
-                // var results = await Client.AddUserAddressAsync(userAddress);
-                // Console.WriteLine($"Person Health Data: {results.Message}");
+                var results = await Client.AddUserAddressAsync(userAddress);
 
-                // Client Streaming
-                using (var stream = Client.AddAddressEnrollments())
-                {
-                    await stream.RequestStream.WriteAsync(userAddress);
-
-                    userAddress = new AddressAdditionRequest
-                    {
-                        Name = GenerateName(GetRandomValue()),
-                        Address = address,
-                        Enrollment = "For Bank"
-                    };
-                    await stream.RequestStream.WriteAsync(userAddress);
-                    await Task.Delay(1000);
-
-                    await stream.RequestStream.CompleteAsync();
-
-                    var response = await stream;
-                    Console.WriteLine($"Sent All");
-                }
+                Console.WriteLine($"Address Data: {results.Message}");
 
                 await Task.Delay(_config.GetValue<int>("RPCService:DelayInterval"), stoppingToken);
             }
