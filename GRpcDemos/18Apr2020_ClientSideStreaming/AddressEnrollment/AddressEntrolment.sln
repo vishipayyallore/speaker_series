@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Address.Server", "Address.Server\Address.Server.csproj", "{E2A7864F-6A81-4ADC-905E-10A6C3B2F060}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Address.Server", "Address.Server\Address.Server.csproj", "{E2A7864F-6A81-4ADC-905E-10A6C3B2F060}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Address.ConsoleApp", "Address.ConsoleApp\Address.ConsoleApp.csproj", "{8094989B-340C-4BF6-8D9B-C2C9723C923A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Address.ConsoleApp", "Address.ConsoleApp\Address.ConsoleApp.csproj", "{8094989B-340C-4BF6-8D9B-C2C9723C923A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Address.WorkerService", "Address.WorkerService\Address.WorkerService.csproj", "{D57DC654-1EC5-4AB6-9C68-2E669B7E27CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Address.WorkerService", "Address.WorkerService\Address.WorkerService.csproj", "{D57DC654-1EC5-4AB6-9C68-2E669B7E27CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Address.WorkerService.ClientStreaming", "Address.WorkerService.ClientStreaming\Address.WorkerService.ClientStreaming.csproj", "{47569C46-A806-4963-B36B-8F7E32722E98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D57DC654-1EC5-4AB6-9C68-2E669B7E27CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D57DC654-1EC5-4AB6-9C68-2E669B7E27CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D57DC654-1EC5-4AB6-9C68-2E669B7E27CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47569C46-A806-4963-B36B-8F7E32722E98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47569C46-A806-4963-B36B-8F7E32722E98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47569C46-A806-4963-B36B-8F7E32722E98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47569C46-A806-4963-B36B-8F7E32722E98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

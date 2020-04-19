@@ -34,7 +34,7 @@ namespace Address.Server.Services
 
         public override async Task<Empty> AddAddressEnrollments(IAsyncStreamReader<AddressAdditionRequest> requestStream, ServerCallContext context)
         {
-            var theTask = Task.Run(async () =>
+            var dbTask = Task.Run(async () =>
             {
                 await foreach (var address in requestStream.ReadAllAsync())
                 {
@@ -49,9 +49,9 @@ namespace Address.Server.Services
                 }
             });
             
-            await theTask.ConfigureAwait(false);
+            await dbTask.ConfigureAwait(false);
             
-            return new Empty();
+            return await Task.FromResult(new Empty());
         }
 
     }
