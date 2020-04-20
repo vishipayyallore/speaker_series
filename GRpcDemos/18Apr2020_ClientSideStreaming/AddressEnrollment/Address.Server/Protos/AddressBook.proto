@@ -10,6 +10,7 @@ import "google/protobuf/empty.proto";
 service AddressBookServer {
   rpc AddUserAddress (AddressAdditionRequest) returns (AddressAdditionResponse);
   rpc AddAddressEnrollments (stream AddressAdditionRequest) returns (google.protobuf.Empty);
+  rpc RetrieveAddressEnrollments (google.protobuf.Empty) returns (stream AddressEnrollment);
 }
 
 message AddressEnrollment {
