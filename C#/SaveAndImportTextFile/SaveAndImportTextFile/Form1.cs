@@ -39,21 +39,21 @@ namespace SaveAndImportTextFile
             saveFileDialog1.ShowDialog();
         }
 
-        private void btnSaveToText_Click(object sender, EventArgs e)
+        private void BtnSaveToText_Click(object sender, EventArgs e)
         {
             const string title = "Save Tube Data as Text File";
 
             ShowFileSaveDialog(textFilePattern, title);
         }
 
-        private void btnSaveToXml_Click(object sender, EventArgs e)
+        private void BtnSaveToXml_Click(object sender, EventArgs e)
         {
             const string title = "Save Tube Data as Xml File";
 
             ShowFileSaveDialog(xmlFilePattern, title);
         }
 
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        private void SaveFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             // Get file name.
             string name = saveFileDialog1.FileName;
@@ -93,7 +93,7 @@ namespace SaveAndImportTextFile
             return fileName;
         }
 
-        private void btnImportFromText_Click(object sender, EventArgs e)
+        private void BtnImportFromText_Click(object sender, EventArgs e)
         {
             const string title = "Import Tube Data from Text File";
             string fileName = GetFileNameFromOpenDialog(textFilePattern, title);
@@ -106,7 +106,7 @@ namespace SaveAndImportTextFile
             }
         }
 
-        private void btnImportFromXml_Click(object sender, EventArgs e)
+        private void BtnImportFromXml_Click(object sender, EventArgs e)
         {
             const string title = "Import Tube Data from Xml File";
             string fileName = GetFileNameFromOpenDialog(xmlFilePattern, title);

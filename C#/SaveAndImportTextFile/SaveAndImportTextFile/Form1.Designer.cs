@@ -66,7 +66,7 @@
             this.btnSaveToText.TabIndex = 1;
             this.btnSaveToText.Text = "Save To Text";
             this.btnSaveToText.UseVisualStyleBackColor = true;
-            this.btnSaveToText.Click += new System.EventHandler(this.btnSaveToText_Click);
+            this.btnSaveToText.Click += new System.EventHandler(this.BtnSaveToText_Click);
             // 
             // btnImportFromText
             // 
@@ -78,7 +78,7 @@
             this.btnImportFromText.TabIndex = 2;
             this.btnImportFromText.Text = "Import from Text";
             this.btnImportFromText.UseVisualStyleBackColor = true;
-            this.btnImportFromText.Click += new System.EventHandler(this.btnImportFromText_Click);
+            this.btnImportFromText.Click += new System.EventHandler(this.BtnImportFromText_Click);
             // 
             // txtName
             // 
@@ -138,7 +138,7 @@
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.SaveFileDialog1_FileOk);
             // 
             // openFileDialog1
             // 
@@ -154,7 +154,7 @@
             this.btnImportFromXml.TabIndex = 9;
             this.btnImportFromXml.Text = "Import from Xml";
             this.btnImportFromXml.UseVisualStyleBackColor = true;
-            this.btnImportFromXml.Click += new System.EventHandler(this.btnImportFromXml_Click);
+            this.btnImportFromXml.Click += new System.EventHandler(this.BtnImportFromXml_Click);
             // 
             // btnSaveToXml
             // 
@@ -166,7 +166,7 @@
             this.btnSaveToXml.TabIndex = 8;
             this.btnSaveToXml.Text = "Save To Xml";
             this.btnSaveToXml.UseVisualStyleBackColor = true;
-            this.btnSaveToXml.Click += new System.EventHandler(this.btnSaveToXml_Click);
+            this.btnSaveToXml.Click += new System.EventHandler(this.BtnSaveToXml_Click);
             // 
             // Form1
             // 
