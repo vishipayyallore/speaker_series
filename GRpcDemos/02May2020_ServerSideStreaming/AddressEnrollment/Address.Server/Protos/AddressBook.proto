@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "Address.Server.Protos";
+
+package addressserver;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+service AddressBookServer {
+  rpc AddUserAddress (AddressAdditionRequest) returns (AddressAdditionResponse);
+  rpc AddAddressEnrollments (stream AddressAdditionRequest) returns (google.protobuf.Empty);
+  rpc RetrieveAddressEnrollments (google.protobuf.Empty) returns (stream AddressEnrollment);
+}
+
+message AddressEnrollment {
+  repeated AddressAdditionRequest enrollments = 1;
+}
+
+message AddressAdditionRequest {
+  string name = 1;
+  string address = 2;
+  string enrollment = 3;
+  string enrollmentstatus = 4;
+}
+
+message AddressAdditionResponse {
+  string message = 1;
+}
