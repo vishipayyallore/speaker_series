@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Address.Common\Address.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Protobuf Include="..\Address.Server\Protos\AddressBook.proto" GrpcServices="Client">
       <Link>Protos\AddressBook.proto</Link>
     </Protobuf>

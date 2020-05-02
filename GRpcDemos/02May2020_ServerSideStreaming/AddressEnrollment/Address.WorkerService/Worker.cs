@@ -1,3 +1,4 @@
+using Address.Common;
 using Address.Server.Protos;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Configuration;
@@ -41,17 +42,16 @@ namespace Address.WorkerService
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var address = _config["RPCService:BranchName"];
-            
             while (!stoppingToken.IsCancellationRequested)
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
-                var userAddress = new AddressAdditionRequest { 
-                                            Name = GenerateName(GetRandomValue()), 
-                                            Address = address,
-                                            Enrollment = _config["RPCService:EnrollmentType"]
-                                            };
+                var userAddress = new AddressAdditionRequest
+                {
+                    Name = Utilities.GenerateName(Utilities.GetRandomValue()),
+                    Address = Utilities.GenerateAddress(),
+                    Enrollment = Utilities.EnrollmentTypes[Utilities.GetRandomValue(1, 4)]
+                };
 
                 var results = await Client.AddUserAddressAsync(userAddress);
 
@@ -61,32 +61,33 @@ namespace Address.WorkerService
             }
         }
 
-        private string GenerateName(int len)
-        {
-            StringBuilder name = new StringBuilder(50);
-            
-            string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "l", "n", "p", "q", "r", "s", "sh", "zh", "t", "v", "w", "x" };
-            string[] vowels = { "a", "e", "i", "o", "u", "ae", "y" };
-
-
-            name.Append(consonants[_random.Next(consonants.Length)].ToUpper());
-            name.Append(vowels[_random.Next(vowels.Length)]);
-            int b = 2;
-            while (b < len)
-            {
-                name.Append(consonants[_random.Next(consonants.Length)]);
-                b++;
-                name.Append(vowels[_random.Next(vowels.Length)]);
-                b++;
-            }
-
-            return name.ToString();
-        }
-
-        private int GetRandomValue()
-        {
-            return _random.Next(8, 17);
-        }
-
     }
 }
+
+
+//private string GenerateName(int len)
+//{
+//    StringBuilder name = new StringBuilder(50);
+
+//    string[] consonants = { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "l", "n", "p", "q", "r", "s", "sh", "zh", "t", "v", "w", "x" };
+//    string[] vowels = { "a", "e", "i", "o", "u", "ae", "y" };
+
+
+//    name.Append(consonants[_random.Next(consonants.Length)].ToUpper());
+//    name.Append(vowels[_random.Next(vowels.Length)]);
+//    int b = 2;
+//    while (b < len)
+//    {
+//        name.Append(consonants[_random.Next(consonants.Length)]);
+//        b++;
+//        name.Append(vowels[_random.Next(vowels.Length)]);
+//        b++;
+//    }
+
+//    return name.ToString();
+//}
+
+//private int GetRandomValue()
+//{
+//    return _random.Next(8, 17);
+//}

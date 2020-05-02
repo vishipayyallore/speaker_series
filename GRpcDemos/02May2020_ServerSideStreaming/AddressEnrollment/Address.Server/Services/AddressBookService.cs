@@ -1,4 +1,5 @@
-﻿using Address.Server.Entities;
+﻿using Address.Common;
+using Address.Server.Entities;
 using Address.Server.Persistence;
 using Address.Server.Protos;
 using Google.Protobuf.WellKnownTypes;
