@@ -22,3 +22,22 @@
     </tr>
   </tbody>
 </table>
+
+<table class='table table-striped bg-warning' aria-labelledby="tableLabel" *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>Professor Id</th>
+      <th>Name</th>
+      <th>DOJ</th>
+      <th>Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let professor of professors">
+      <td>{{ professor.professorId }}</td>
+      <td>{{ professor.name }}</td>
+      <td>{{ professor.doj | date}}</td>
+      <td>{{ professor.salary }}</td>
+    </tr>
+  </tbody>
+</table>
