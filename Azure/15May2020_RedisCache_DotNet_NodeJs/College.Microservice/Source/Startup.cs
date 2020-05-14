@@ -13,6 +13,9 @@ namespace College.Microservice
 {
     public class Startup
     {
+        const string AllowSpecificOrigins = "onlyFromMyPC";
+        const string LocalApplicationAddress = "https://localhost:44353";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,6 +26,14 @@ namespace College.Microservice
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: AllowSpecificOrigins, builder => {
+                    builder.WithOrigins(LocalApplicationAddress);
+                });
+            });
+
             services.AddControllers();
 
             // Adding EF Core
@@ -52,6 +63,8 @@ namespace College.Microservice
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(AllowSpecificOrigins);
 
             app.UseAuthorization();
 
