@@ -13,11 +13,11 @@
 
         public static class RedisCacheStore
         {
-            public static string InstanceName { get; } = "CollegeRedisCache";
+            public static string InstanceName { get; } = "CollegeRedisCache_";
 
             public static string AllProfessorsKey { get; } = "college_all_professors";
 
-            public static string SingleProfessorsKey { get; } = "professors_";
+            public static string SingleProfessorsKey { get; } = "professor_";
         }
     }
 
