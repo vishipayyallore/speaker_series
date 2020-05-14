@@ -330,3 +330,4 @@ ASALocalRun/
 .mfractor/
 /Docker/05Oct2019/Source/SimpleWebApi/CustomImage
 /Docker/05Oct2019/Source/SimpleWebApiV1/CustomImage/Output
+/Azure/15May2020_RedisCache_DotNet_NodeJs/College.Microservice/Source/appsettings.Development.json
