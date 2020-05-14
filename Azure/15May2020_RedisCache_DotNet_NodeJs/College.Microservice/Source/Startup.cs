@@ -32,6 +32,13 @@ namespace College.Microservice
             // Application Services
             services.AddScoped<ProfessorsBal>();
             services.AddScoped<ProfessorsDal>();
+
+            // Adding Redis Cache 
+            services.AddStackExchangeRedisCache(option =>
+            {
+                option.Configuration = Configuration[Constants.DataStore.RedisConnectionString];
+                option.InstanceName = Constants.RedisCacheStore.InstanceName;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
