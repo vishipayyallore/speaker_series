@@ -26,10 +26,6 @@ URL: <https://redislabs.com/blog/redis-on-windows-10/>
 
 ![image info](./Images/Local_Redis_Cache.jpg)
 
-## Working with Redis Cache in Azure
-
-To be done.
-
 ## Creating Simple ASP.Net Core 3.1 Web API (EF Core, and Redis)
 
 1. We will verify the existing .Net Core Web API using Postman.
@@ -53,11 +49,15 @@ To be done.
 
 ![image info](./Images/WebUI_Consuming_DotNet_WebAPI.jpg)
 
+## Working with Redis Cache in Azure
+
+### Will be covered in Next Month's (15-Jun-2020) session.
+
 ## Creating Simple Node JS Web API (Mongo Db, and Redis)
 
-### Will be covered in Next Month's session.
+### Will be covered in Next Month's  (15-Jun-2020) session.
 
 ## Consuming Node JS Web API in Client Application.
 
-### Will be covered in Next Month's session.
+### Will be covered in Next Month's  (15-Jun-2020) session.
 
