@@ -10,15 +10,17 @@ URL: <https://redislabs.com/blog/redis-on-windows-10/>
 2. sudo apt-get upgrade
 3. sudo apt-get install redis-server
 
+### Verifying the Version
+
+1. redis-server -v
+2. redis-cli -v
+
 ### To Start and Stop the Redis Service
 
 1. sudo service redis-server restart
 2. sudo service redis-server stop
 
-### Verifying the Version
 
-1. redis-server -v
-2. redis-cli -v
 
 ### To connect to Redis Server
 

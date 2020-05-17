@@ -7,12 +7,13 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace College.Api.Controllers
+namespace College.Microservice.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ProfessorsController : ControllerBase
     {
+
         private readonly ProfessorsBal _professorsBusiness;
         private readonly IDistributedCache _cache;
 
@@ -40,7 +41,7 @@ namespace College.Api.Controllers
                 professors = _professorsBusiness.GetProfessors();
 
                 //and then, put them in cache
-                _cache.SetString(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors), 
+                _cache.SetString(Constants.RedisCacheStore.AllProfessorsKey, JsonConvert.SerializeObject(professors),
                         GetDistributedCacheEntryOptions());
             }
 
@@ -104,7 +105,6 @@ namespace College.Api.Controllers
             return NoContent();
         }
 
-
         private DistributedCacheEntryOptions GetDistributedCacheEntryOptions()
         {
             return new DistributedCacheEntryOptions()
@@ -112,6 +112,7 @@ namespace College.Api.Controllers
                 AbsoluteExpiration = new System.DateTimeOffset(DateTime.Now.ToUniversalTime().AddSeconds(60), new TimeSpan(0, 0, 0))
             };
         }
+
     }
 
 }

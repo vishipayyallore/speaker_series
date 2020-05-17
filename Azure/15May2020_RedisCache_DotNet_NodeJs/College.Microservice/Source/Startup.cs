@@ -14,7 +14,7 @@ namespace College.Microservice
     public class Startup
     {
         const string AllowSpecificOrigins = "onlyFromMyPC";
-        const string LocalApplicationAddress = "https://localhost:44353";
+        const string LocalApplicationAddress = "https://localhost:44320";
 
         public Startup(IConfiguration configuration)
         {
