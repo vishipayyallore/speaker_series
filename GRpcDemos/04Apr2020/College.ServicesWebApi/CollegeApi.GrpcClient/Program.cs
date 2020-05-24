@@ -13,6 +13,17 @@ namespace CollegeApi.GrpcClient
             using var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new CollegeService.CollegeServiceClient(channel);
 
+            // Add New Professor
+            NewProfessorRequest professorNew = new NewProfessorRequest()
+            {
+                Name = "Shiva",
+                Doj = Timestamp.FromDateTime(DateTime.Now.AddYears(-5).ToUniversalTime()),
+                Teaches = "CSharp, Java",
+                Salary = 1234.56,
+                IsPhd = true
+            };
+            var professorGenerated = await client.AddProfessorAsync(professorNew);
+
             // Retrieve Single Row
             var professorRequest = new GetProfessorRequest { ProfessorId = "5ec797ec-da0a-43df-b3a3-3f9a04163656" };
             var professor = await client.GetProfessorByIdAsync(professorRequest);

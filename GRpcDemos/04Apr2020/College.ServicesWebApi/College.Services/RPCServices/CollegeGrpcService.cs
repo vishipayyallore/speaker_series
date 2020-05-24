@@ -20,6 +20,29 @@ namespace College.Services.RPCServices
             _collegeDbContext = collegeDbContext;
         }
 
+        public override async Task<NewProfessorResponse> AddProfessor(NewProfessorRequest request, ServerCallContext context)
+        {
+            var newProfessor = new NewProfessorResponse
+            {
+                Message = "success"
+            };
+
+            var professor = new Professor
+            {
+                Name = request.Name,
+                Doj = request.Doj.ToDateTime(),
+                Teaches = request.Teaches,
+                Salary = Convert.ToDecimal(request.Salary),
+                IsPhd = request.IsPhd
+            };
+
+            var results = _collegeDbContext.Professors.Add(professor);
+            await _collegeDbContext.SaveChangesAsync();
+
+            newProfessor.ProfessorId = results.Entity.ProfessorId.ToString();
+            return newProfessor;
+        }
+
         public override async Task<GetProfessorResponse> GetProfessorById(GetProfessorRequest request, ServerCallContext context)
         {
             GetProfessorResponse getProfessorResponse = new GetProfessorResponse();
