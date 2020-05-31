@@ -4,6 +4,12 @@
 
 URL: <https://redislabs.com/blog/redis-on-windows-10/>
 
+### Verify WSL on Windows 10
+
+hostname
+lsb_release -a
+cat /etc/*-release
+
 ### To Install on WSL on Windows 10
 
 1. sudo apt-get update
