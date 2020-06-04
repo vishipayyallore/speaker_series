@@ -17,6 +17,11 @@ namespace FileWordCount
 
             var words = fileContent.Replace("\r\n"," ").Split(" ");
 
+            if(words.Length < 5)
+            {
+                WriteLine("\n\nFile Should have minimum 5 words!!!");
+            }
+
             var counts = words
                 .GroupBy(w => w)
                 .Select(g => new { Word = g.Key, Count = g.Count() })
